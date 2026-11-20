@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UniFlow — Inscription en ligne</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+:root{--navy:#142b4a;--blue:#2868d7;--muted:#718096;--line:#e5ebf3;--bg:#f4f7fb;--green:#16865b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--navy);font-family:'DM Sans',sans-serif}.topbar{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(calc((100% - 1080px)/2),24px)}.brand{display:flex;align-items:center;gap:10px;color:var(--navy);font:800 20px Manrope}.brand-mark{width:32px;height:32px;border-radius:10px;background:var(--blue);color:white;display:grid;place-items:center}.top-note{font-size:13px;color:var(--muted)}.shell{max-width:900px;margin:54px auto;padding:0 22px}.intro{margin-bottom:30px}.eyebrow{font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--blue);display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;background:#26b47b;border-radius:50%}h1{font:800 clamp(34px,5vw,48px)/1.12 Manrope;letter-spacing:-1.8px;margin:16px 0 12px}h1 span{color:var(--blue)}.intro>p{max-width:660px;color:#66758b;line-height:1.7;margin:0}.steps{display:flex;align-items:center;gap:12px;margin-top:27px;max-width:510px}.step{display:flex;align-items:center;gap:8px;color:#9aa6b7;font-size:12px;font-weight:600;white-space:nowrap}.step b{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#e7edf5;color:#7c8ba0}.step.active{color:var(--navy)}.step.active b{background:#e6efff;color:var(--blue)}.steps i{height:1px;background:#dce4ef;flex:1}.form-card,.confirmation{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 35px rgba(24,48,83,.05)}.form-card{padding:32px 36px}.card-heading{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;padding-bottom:25px;border-bottom:1px solid var(--line)}h2{font:700 24px Manrope;margin:8px 0 5px;letter-spacing:-.5px}.card-heading p,.section-title p{color:var(--muted);font-size:13px;margin:0}.secure{background:#f0f8f4;color:#21805d;border-radius:20px;padding:8px 11px;font-size:11px;font-weight:600;white-space:nowrap}.form-section{padding:27px 0;border-bottom:1px solid var(--line)}.section-title{display:flex;gap:13px;align-items:flex-start;margin-bottom:20px}.number{width:29px;height:29px;border-radius:9px;background:#edf3ff;color:var(--blue);display:grid;place-items:center;font-size:12px;font-weight:700;flex-shrink:0}.section-title h3{font:700 16px Manrope;margin:2px 0 5px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:17px}.field{display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:600;color:#41536b}.field.full{grid-column:1/-1}.field em,.consent em,.required-note em{color:#e05c65;font-style:normal}.field input{height:45px;border:1px solid #dfe6ef;border-radius:9px;padding:0 13px;font:14px 'DM Sans';outline:none;color:var(--navy)}.field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #2868d715}.field input::placeholder{color:#aab5c4}.notice{display:flex;gap:10px;background:#f4f8ff;border:1px solid #e4edff;border-radius:10px;padding:12px 14px;color:#536782;font-size:12px;line-height:1.55;margin-bottom:16px}.notice p{margin:0}.document-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}.doc-item{border:1px solid var(--line);border-radius:11px;padding:14px;min-width:0}.doc-top{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:12px}.doc-name{font-size:12px;font-weight:700;line-height:1.4}.required-tag{font-size:9px;color:#c45a61;background:#fff1f1;padding:4px 6px;border-radius:5px;white-space:nowrap}.upload{display:flex;align-items:center;justify-content:center;gap:8px;border:1px dashed #bdcce0;border-radius:8px;padding:11px 8px;color:var(--blue);font-size:11px;font-weight:700;cursor:pointer;background:#fafcff}.upload:hover{background:#f0f5ff;border-color:var(--blue)}.upload input{display:none}.file-name{font-size:10px;color:var(--green);margin-top:8px;overflow-wrap:anywhere;min-height:12px}.file-hint{font-size:11px;color:#8a98aa;margin:12px 0 0}.consent{display:flex;gap:10px;align-items:flex-start;color:#68788e;font-size:12px;line-height:1.6;margin:22px 0}.consent input{accent-color:var(--blue);margin-top:3px}.form-actions{display:flex;align-items:center;justify-content:space-between;gap:15px}.required-note{font-size:11px;color:#8a98aa}.submit-btn,.secondary-btn{border:0;border-radius:9px;background:var(--blue);color:#fff;padding:13px 19px;font:600 13px 'DM Sans';cursor:pointer;box-shadow:0 5px 12px #2868d72b}.submit-btn:hover{background:#1e56bd}.submit-btn span{font-size:17px;margin-left:12px}.message{font-size:12px;color:#c34e56;margin-top:12px;min-height:16px}.confirmation{text-align:center;padding:48px 30px;margin-top:22px}.confirmation.hidden,.form-card.hidden{display:none}.success-icon{width:54px;height:54px;background:#eaf8f1;color:var(--green);border-radius:50%;display:grid;place-items:center;font-size:26px;margin:0 auto 18px}.confirmation .eyebrow{justify-content:center}.confirmation p{max-width:550px;margin:10px auto 20px;color:var(--muted);font-size:13px;line-height:1.7}.reference{background:#f5f8fc;border:1px solid var(--line);border-radius:9px;padding:13px;margin:20px auto;max-width:320px;font-size:12px;color:var(--muted)}.reference strong{display:block;color:var(--navy);font-size:16px;margin-top:5px;letter-spacing:1px}.secondary-btn{background:#edf3ff;color:var(--blue);box-shadow:none}footer{text-align:center;color:#9aa6b7;font-size:11px;padding:25px 0 12px}
+@media(max-width:650px){.shell{margin:34px auto}.form-card{padding:23px 18px}.card-heading{display:block}.secure{display:inline-block;margin-top:14px}.fields,.document-list{grid-template-columns:1fr}.field.full{grid-column:auto}.steps{gap:7px}.step{font-size:10px;gap:5px}.top-note{font-size:10px}.form-actions{align-items:flex-start;flex-direction:column}.submit-btn{width:100%}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">U</span><span>UniFlow</span></div>
+  <span class="top-note">Portail d'inscription universitaire</span>
+</header>
+<main class="shell">
+  <section class="intro">
+    <div class="eyebrow"><span class="dot"></span> CAMPAGNE D'INSCRIPTION</div>
+    <h1>Votre inscription,<br><span>en quelques étapes.</span></h1>
+    <p>Renseignez vos informations et déposez les documents demandés par votre établissement. Votre dossier sera ensuite transmis à l'administration pour vérification.</p>
+    <div class="steps"><div class="step active"><b>1</b><span>Informations</span></div><i></i><div class="step active"><b>2</b><span>Documents</span></div><i></i><div class="step"><b>3</b><span>Confirmation</span></div></div>
+  </section>
+  <section class="form-card">
+    <div class="card-heading"><div><div class="eyebrow">DOSSIER ÉTUDIANT</div><h2>Formulaire d'inscription</h2><p>Les champs marqués d'un astérisque sont obligatoires.</p></div><div class="secure">✓ Dépôt de démonstration</div></div>
+    <form id="registrationForm">
+      <section class="form-section">
+        <div class="section-title"><span class="number">01</span><div><h3>Informations personnelles</h3><p>Identifiez-vous avec vos informations universitaires.</p></div></div>
+        <div class="fields">
+          <label class="field"><span>Identifiant étudiant <em>*</em></span><input id="studentId" placeholder="Ex. 2024XXXXX" required></label>
+          <label class="field"><span>Nom et prénom <em>*</em></span><input id="fullName" placeholder="Votre nom complet" required></label>
+          <label class="field full"><span>Adresse e-mail <em>*</em></span><input id="email" type="email" placeholder="nom@exemple.com" required></label>
+        </div>
+      </section>
+      <section class="form-section">
+        <div class="section-title"><span class="number">02</span><div><h3>Documents à fournir</h3><p>Ajoutez chaque document dans l'emplacement correspondant.</p></div></div>
+        <div class="notice"><span>ⓘ</span><p>Liste illustrative à adapter selon les exigences officielles de votre établissement.</p></div>
+        <div id="documentList" class="document-list"></div>
+        <p class="file-hint">Formats acceptés : PDF, JPG, JPEG, PNG. Taille maximale : 5 Mo par fichier.</p>
+      </section>
+      <label class="consent"><input type="checkbox" id="confirmAccuracy" required><span>Je confirme que les informations fournies sont exactes et que les documents déposés correspondent à mon dossier. <em>*</em></span></label>
+      <div class="form-actions"><span class="required-note"><em>*</em> Champs obligatoires</span><button type="submit" class="submit-btn">Envoyer mon dossier <span>→</span></button></div>
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+  <section id="confirmation" class="confirmation hidden">
+    <div class="success-icon">✓</div><div class="eyebrow">DOSSIER ENREGISTRÉ</div><h2>Votre demande a bien été envoyée.</h2>
+    <p>Votre dossier de démonstration a été enregistré dans ce navigateur. L'administration devra vérifier les informations et les documents avant de confirmer l'inscription.</p>
+    <div class="reference">Référence de suivi<strong id="reference"></strong></div>
+    <button id="newSubmission" class="secondary-btn">Créer un autre dossier</button>
+  </section>
+  <footer>UniFlow · Prototype académique · Les données restent dans votre navigateur pour cette démonstration.</footer>
+</main>
+<script>
+/* Modifiez les intitulés ci-dessous selon les pièces réellement exigées par l'université. */
+const REQUIRED_DOCUMENTS = [
+  "Copie de la carte d'identité nationale (CIN)",
+  "Copie du diplôme du baccalauréat",
+  "Photo d'identité",
+  "Justificatif de paiement",
+  "Document universitaire complémentaire"
+];
+const documentList=document.getElementById("documentList");
+const form=document.getElementById("registrationForm");
+const message=document.getElementById("message");
+const confirmation=document.getElementById("confirmation");
+const MAX_FILE_SIZE=5*1024*1024;
+const ALLOWED_TYPES=["application/pdf","image/jpeg","image/png"];
+
+REQUIRED_DOCUMENTS.forEach((title,index)=>{
+  const item=document.createElement("div");
+  item.className="doc-item";
+  item.innerHTML='<div class="doc-top"><span class="doc-name"></span><span class="required-tag">OBLIGATOIRE</span></div><label class="upload"><input type="file" accept=".pdf,.jpg,.jpeg,.png" required><span>＋ Choisir un fichier</span></label><div class="file-name" aria-live="polite">Aucun fichier sélectionné</div>';
+  item.querySelector(".doc-name").textContent=title;
+  const input=item.querySelector("input");
+  input.name="document_"+(index+1);
+  input.addEventListener("change",()=>{
+    const file=input.files[0],label=item.querySelector(".file-name");
+    label.textContent=file?file.name:"Aucun fichier sélectionné";
+    if(file&&file.size>MAX_FILE_SIZE){input.value="";label.textContent="Fichier trop volumineux (maximum 5 Mo).";label.style.color="#c34e56";}
+    else if(file&&!ALLOWED_TYPES.includes(file.type)){input.value="";label.textContent="Format non accepté. Utilisez PDF, JPG ou PNG.";label.style.color="#c34e56";}
+    else label.style.color="#16865b";
+  });
+  documentList.appendChild(item);
+});
+
+form.addEventListener("submit",(event)=>{
+  event.preventDefault();message.textContent="";
+  if(!form.reportValidity())return;
+  const files=[...document.querySelectorAll('.doc-item input[type="file"]')];
+  const invalid=files.find(input=>!input.files[0]||input.files[0].size>MAX_FILE_SIZE||!ALLOWED_TYPES.includes(input.files[0].type));
+  if(invalid){message.textContent="Vérifiez que tous les documents sont ajoutés au bon format et ne dépassent pas 5 Mo.";invalid.focus();return;}
+  const reference="UF-"+Date.now().toString().slice(-8);
+  const application={
+    reference,
+    studentId:document.getElementById("studentId").value.trim(),
+    fullName:document.getElementById("fullName").value.trim(),
+    email:document.getElementById("email").value.trim(),
+    documents:files.map(input=>({field:input.name,filename:input.files[0].name,size:input.files[0].size,type:input.files[0].type})),
+    status:"En attente de vérification",
+    submittedAt:new Date().toISOString()
+  };
+  /* Démo uniquement : seules les informations et métadonnées sont conservées dans ce navigateur.
+     Les fichiers ne sont PAS téléversés vers un serveur. */
+  const saved=JSON.parse(localStorage.getItem("uniflow_applications")||"[]");
+  saved.push(application);
+  localStorage.setItem("uniflow_applications",JSON.stringify(saved));
+  document.getElementById("reference").textContent=reference;
+  document.querySelector(".form-card").classList.add("hidden");
+  confirmation.classList.remove("hidden");
+  confirmation.scrollIntoView({behavior:"smooth",block:"center"});
+});
+document.getElementById("newSubmission").addEventListener("click",()=>{
+  form.reset();
+  document.querySelectorAll(".file-name").forEach(el=>{el.textContent="Aucun fichier sélectionné";el.style.color="#16865b";});
+  confirmation.classList.add("hidden");
+  document.querySelector(".form-card").classList.remove("hidden");
+  document.querySelector(".intro").scrollIntoView({behavior:"smooth"});
+});
+</script>
+</body>
+</html>
